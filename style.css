@@ -1,3 +1,11 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-color: #f8fafc;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,105 +13,111 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 40px 0;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 2.5em;
-}
-
-header p {
-    font-size: 1.2em;
-}
-
-section {
-    background-color: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-section h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-}
-
-section p {
-    font-size: 1.1em;
-    line-height: 1.5;
-}
-
-ul {
-    list-style-type: none;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer a {
-    color: #4CAF50;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Kiểu dọc cho CV */
-header, .about, .experience, .skills {
-    display: block;
-    margin-bottom: 40px;
-}
-
-h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-p {
-    font-size: 1.2em;
-    color: #666;
+    font-family: 'Inter', Segoe UI, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
-ul {
-    font-size: 1.1em;
-    color: #555;
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-ul li {
-    margin-bottom: 15px;
-}
-
-footer {
-    background-color: #333;
+/* Header mượt mà với Gradient */
+header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
     color: white;
+    padding: 60px 0;
     text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.contact-top {
+    margin-top: 15px;
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+.contact-top span {
+    margin: 0 10px;
+}
+
+/* Các Section dạng Card */
+section {
+    background: white;
+    padding: 30px;
+    margin: -20px 0 30px 0; /* Đẩy section đầu tiên lên phần header một chút */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Kinh nghiệm làm việc */
+.exp-item {
+    margin-bottom: 25px;
+    padding-left: 15px;
+    border-left: 3px solid #dbeafe;
+}
+
+.exp-item h3 {
+    color: #111827;
+}
+
+.duration {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.position {
+    font-weight: 600;
+    color: #4b5563;
+    font-style: italic;
+}
+
+/* Kỹ năng dạng Tags */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tags span {
+    background: #eff6ff;
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid #dbeafe;
+}
+
+
+/* Responsive cho điện thoại */
+@media (max-width: 600px) {
+    header h1 { font-size: 2rem; }
+    section { padding: 20px; }
 }
